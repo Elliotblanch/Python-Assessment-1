@@ -65,8 +65,16 @@ def one(input1, input2):
 	# Use your CLI to access the Python documentation and get help manipulating strings - help(str).
 
 def two(input):
-	return ""
+	input1 = input.lower()
+	start = input1.index("bert")
+	end = input1.index("bert",start+1)
+	result = input1[start+4:end]
+	
+	return result
 
+	# Error: substring not found
+	# problems when no second bert
+	
 
 
 
@@ -89,9 +97,17 @@ def two(input):
 
 	# No Hints for this question
 
-def three(arg1):
-	return ""
-
+def three(num):
+	if num % 3 == 0 and num % 5 == 0:
+		return "fizzbuzz"
+	elif num % 3 == 0:
+		return "fizz"
+	elif num % 5 == 0:
+		return "buzz"
+	else:
+		return "null"
+	
+	
 
 	# <QUESTION 4>
 
@@ -143,8 +159,12 @@ def four(arg1):
 
 	# help(str) and help(list), you might also need to use a function that can create a list of numbers for you, try help(range).
 
-def five(input):
-	return ""
+def five(record):
+	list = [{record}]
+	
+	for name in record:
+		if name == False:
+			return f"{record[0]}"
 
 	# <QUESTION 6>
 
@@ -165,8 +185,25 @@ def five(input):
 
 
 def six(input):
-	return ""
 	
+	word = input.split()                            
+	for x in range(0, len(word)):  
+
+		if "ie" in word:                            
+			if "cie" in word:                     
+				return False
+			else: 
+				return True
+				
+
+		elif "ei" in word:
+			if "cei" in word:
+				return True
+			else:
+				return False
+		else:
+			return False
+	# Failing on test 4 or 5, not sure why?
 	
 		
 
@@ -186,8 +223,14 @@ def six(input):
 #def isVowel(ch): 
 #    return ch.upper() in ['A', 'E', 'I', 'O', 'U'] 
 
-def seven(input): 
-	pass
+def seven(word): 
+	number_of_vowels = 0
+	vowels = ["a", "e", "i", "o", "u"]
+	for letter in word.lower():
+		if letter in vowels:
+			number_of_vowels += 1
+	return number_of_vowels
+
    
 
 	# <QUESTION 8>
@@ -205,8 +248,10 @@ def seven(input):
 
 	# You may need to create a list of numbers from 0 to i, take a look at help(range).
 
-def eight(input):
-	return ""
+def eight(x):
+	if x == 0:
+		return 1
+	return x * eight(x - 1)
 	
 
 	# <QUESTION 9>
@@ -228,6 +273,7 @@ def eight(input):
 	# Take a look at the documentation for Strings, List and range.
 
 def nine(inputString, char):
+
 	return ""
 
 
